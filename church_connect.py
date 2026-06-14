@@ -23,7 +23,7 @@ create_member_departments_table()
 
 st.sidebar.image('mhc_logo.png')
 password = st.sidebar.text_input('Admin Password', type='password')
-if password != 'MHC2026':
+if password != st.secrets["APP_PASSWORD"]:
     st.warning('Please enter the admin password to access the system.')
     st.stop()
 
@@ -571,7 +571,7 @@ elif page == 'Dashboard':
 st.markdown("""
     <hr>
     <p style='text-align: center; color: grey; font-size: 12px;'>
-        © 2026 ChurchConnect Pro | MHC Technologies Zambia<br>
+        © 2026 ChurchConnect Pro(Beta) | MHC Technologies Zambia<br>
         Church Management System • Built for Modern Ministries
     </p>
 """, unsafe_allow_html=True)
